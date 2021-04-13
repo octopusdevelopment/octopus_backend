@@ -1,0 +1,4 @@
+python manage.py makemigrations --dry-run --verbosity 3
+python manage.py runserver
+python manage.py createsuperuser
+coverage run --omit= manage.py test
