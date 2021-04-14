@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+
+
+{% block title %}{{ title }} | {{ site_title|default:_('Octopus') }}{% endblock %}
+{% block extrahead %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" sizes="80x50" />
+{% endblock %}
+
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">  
+{% endblock extrastyle %}
+
+
+{% block branding %}
+  <h1 id="site-name">
+    <img src="{% static 'images/logo.png' %}" alt="Octopus" title="Octopus" width="120" height="auto">
+  </h1>
+{% endblock branding %}
+
+{% block welcome-msg %}
+                Bienvenue
+                <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+{% endblock %}

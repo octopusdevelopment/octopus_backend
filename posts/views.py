@@ -28,9 +28,9 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 class StandardResultsSetPagination(PageNumberPagination):
-    page_size = 1
+    page_size = 12
     page_size_query_param = 'page_size'
-    max_page_size = 1
+    max_page_size = 12
 
 class PostInfoCreateAPIView(generics.ListCreateAPIView):
     queryset = PostInfo.postobjects.all()
