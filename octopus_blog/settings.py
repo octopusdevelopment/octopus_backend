@@ -25,7 +25,12 @@ SECRET_KEY = 'z$n@04$(*h%4-2yhjtikcas)qjuulh_a++@*qf=@59@jqa_-a5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*','backend.octopus-consulting.com', 'backend.octopus-consulting.com']
+ADMINS = (
+ ('Hildweig', 'Hildweig@gmail.com'),
+
+)
+
+ALLOWED_HOSTS = ['vps.octopus-consulting.com', 'vps.octopus-consulting.com']
 
 
 # Application definition
@@ -172,4 +177,14 @@ CORS_ALLOWED_ORIGINS = [
     "https://octopus-consulting.com",
     "http://octopus-consulting.com"
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'octopus.messagerie@gmail.com'
+EMAIL_HOST_PASSWORD = 'txogjbketqbbkqxe'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
 
