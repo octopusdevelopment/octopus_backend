@@ -30,7 +30,7 @@ ADMINS = (
 
 )
 
-ALLOWED_HOSTS = ['vps.octopus-consulting.com', 'vps.octopus-consulting.com']
+ALLOWED_HOSTS = ['51.222.199.231','vps.octopus-consulting.com', 'www.vps.octopus-consulting.com', 'backend.octopus-consulting.com', 'www.backend.octopus-consulting.com']
 
 
 # Application definition
