@@ -23,14 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z$n@04$(*h%4-2yhjtikcas)qjuulh_a++@*qf=@59@jqa_-a5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ADMINS = (
- ('Hildweig', 'Hildweig@gmail.com'),
+# ADMINS = (
+#  ('Hildweig', 'Hildweig@gmail.com'),
+# )
 
-)
-
-ALLOWED_HOSTS = ['51.222.199.231','vps.octopus-consulting.com', 'www.vps.octopus-consulting.com', 'backend.octopus-consulting.com', 'www.backend.octopus-consulting.com']
+ALLOWED_HOSTS = ['*', 'backend.octopus-consulting.com', 'www.backend.octopus-consulting.com']
 
 
 # Application definition
@@ -38,6 +37,7 @@ ALLOWED_HOSTS = ['51.222.199.231','vps.octopus-consulting.com', 'www.vps.octopus
 INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'contacts.apps.ContactsConfig',
+    'services.apps.ServicesConfig',
 
     'rest_framework',
     'corsheaders', # to make other links access the api
@@ -67,14 +67,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'octopus_blog.urls'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-#HSTS
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000 #1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# #HSTS
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_HSTS_SECONDS = 31536000 #1 year
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
 
 TEMPLATES = [
     {
@@ -111,6 +111,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
 }
+
+UNICODE_JSON = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -175,7 +177,10 @@ CKEDITOR_CONFIGS = {
 
 CORS_ALLOWED_ORIGINS = [
     "https://octopus-consulting.com",
-    "http://octopus-consulting.com"
+    "http://octopus-consulting.com",
+    "http://127.0.0.1",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
